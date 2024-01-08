@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-BoldItalic.woff2") format("woff2"),
+        url("fonts/Montserrat-BoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-ExtraBold.woff2") format("woff2"),
+        url("fonts/Montserrat-ExtraBold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-BlackItalic.woff2") format("woff2"),
+        url("fonts/Montserrat-BlackItalic.woff") format("woff");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-ExtraLight.woff2") format("woff2"),
+        url("fonts/Montserrat-ExtraLight.woff") format("woff");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-Medium.woff2") format("woff2"),
+        url("fonts/Montserrat-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-Light.woff2") format("woff2"),
+        url("fonts/Montserrat-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-Black.woff2") format("woff2"),
+        url("fonts/Montserrat-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-Italic.woff2") format("woff2"),
+        url("fonts/Montserrat-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-LightItalic.woff2") format("woff2"),
+        url("fonts/Montserrat-LightItalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-Bold.woff2") format("woff2"),
+        url("fonts/Montserrat-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-ExtraBoldItalic.woff2") format("woff2"),
+        url("fonts/Montserrat-ExtraBoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-ExtraLightItalic.woff2") format("woff2"),
+        url("fonts/Montserrat-ExtraLightItalic.woff") format("woff");
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-MediumItalic.woff2") format("woff2"),
+        url("fonts/Montserrat-MediumItalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-Regular.woff2") format("woff2"),
+        url("fonts/Montserrat-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-SemiBoldItalic.woff2") format("woff2"),
+        url("fonts/Montserrat-SemiBoldItalic.woff") format("woff");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-SemiBold.woff2") format("woff2"),
+        url("fonts/Montserrat-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-Thin.woff2") format("woff2"),
+        url("fonts/Montserrat-Thin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src:
+        url("fonts/Montserrat-ThinItalic.woff2") format("woff2"),
+        url("fonts/Montserrat-ThinItalic.woff") format("woff");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "ZCOOL KuaiLe";
+    src:
+        url("fonts/ZCOOLKuaiLe-Regular.woff2") format("woff2"),
+        url("fonts/ZCOOLKuaiLe-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@layer base {
+    * {
+        scrollbar-width: auto;
+        scrollbar-color: transparent #ffffff;
+    }
+
+    *::-webkit-scrollbar {
+        @apply w-[5px] h-[5px];
+    }
+
+    *::-webkit-scrollbar-track {
+        @apply hidden;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        @apply bg-white bg-opacity-40 rounded-full;
+    }
+
+    * {
+        @apply font-Montserrat text-primary;
+    }
+
+    h1,
+    h2,
+    h3 {
+        @apply font-bold;
+    }
+
+    p,
+    input {
+        @apply font-normal;
+    }
+
+    a,
+    button {
+        @apply font-semibold select-none;
+    }
+
+    input {
+        @apply outline-none;
+    }
+
+    .font-ZCOOLKuaiLe {
+        @apply tracking-widest;
+    }
+}
+
+@layer components {
+    .onlyGlass {
+        @apply bg-background bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-40 border-background-800;
+    }
+
+    .onlyGlassSecondary {
+        @apply onlyGlass bg-backgroundSecondary-950 bg-opacity-70;
+    }
+
+    .glass {
+        @apply onlyGlass rounded-lg border;
+    }
+
+    button.glass,
+    input.glass,
+    a.glass {
+        @apply px-5 py-2.5;
+    }
+
+    button.glass,
+    a.glass {
+        @apply transition-all duration-300;
+    }
+
+    button.glass:hover,
+    a.glass:hover {
+        @apply -translate-y-1;
+    }
+
+    input.glass {
+        @apply rounded-full;
+    }
+}
