@@ -9,6 +9,8 @@
     <div class="h-full text-left w-[50%] py-2">
         <p class="text-3xl mb-2 font-bold">{name}</p>
         <p class="text-xl">{description}</p>
+
+        <div></div>
     </div>
 
     <div class="flex justify-center items-center w-[50%]">
