@@ -4,7 +4,7 @@
         <a class="text-primary font-ZCOOLKuaiLe" href="/#projects">projects</a>
     </div>
 
-    <img class="h-12 mx-12" src="/logo.svg" alt="monke mob logo" />
+    <img class="h-12 mx-12" src="/images/logo.svg" alt="monke mob logo" />
 
     <div class="flex justify-start items-center gap-8 flex-grow">
         <a class="text-primary font-ZCOOLKuaiLe" href="/#team">team</a>
