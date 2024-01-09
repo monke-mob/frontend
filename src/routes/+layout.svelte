@@ -7,14 +7,14 @@
     <title>monke mob</title>
 </svelte:head>
 
-<div class="w-screen overflow-x-hidden">
-    <Header></Header>
+<main class="w-screen h-screen overflow-y-auto overflow-x-hidden">
+    <Header />
 
     <slot />
-</div>
+</main>
 
 <style lang="postcss">
     :global(body) {
-        @apply w-full h-screen text-center;
+        @apply w-full text-center bg-no-repeat bg-gradient-to-b from-backgroundSecondary to-background;
     }
 </style>

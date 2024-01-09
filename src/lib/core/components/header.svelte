@@ -1,12 +1,42 @@
-<header class="w-screen py-6 flex justify-center items-center absolute top-0 left-0 z-10 text-lg text-primary">
-    <div class="flex justify-end items-center gap-8 flex-grow">
+<script lang="ts">
+    import { onMount } from "svelte";
+
+    let main: HTMLDivElement
+    let ticking: boolean = false;
+    $: scrolling = false;
+
+    function scroll() {
+        const scrollPosition: number = main.scrollTop;
+
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                scrolling = scrollPosition >= 50;
+                ticking = false;
+            });
+
+            ticking = true;
+        }
+    }
+
+    onMount(() => {
+        main = document.querySelector("main")! as HTMLDivElement;
+        main.addEventListener("scroll", scroll);
+
+        return () => {
+            main.removeEventListener("scroll", scroll);
+        };
+    });
+</script>
+
+<header class="w-screen flex justify-center items-center absolute top-0 left-0 z-10 text-lg text-primary transition-all duration-300 {scrolling ? 'backdrop-blur-md backdrop-brightness-[0.15] py-4' : 'py-6'}">
+    <div class="flex justify-end items-center gap-8 basis-full">
         <a class="text-primary font-ZCOOLKuaiLe" href="/">about us</a>
         <a class="text-primary font-ZCOOLKuaiLe" href="/#projects">projects</a>
     </div>
 
     <img class="h-12 mx-12" src="/images/logo.svg" alt="monke mob logo" />
 
-    <div class="flex justify-start items-center gap-8 flex-grow">
+    <div class="flex justify-start items-center gap-8 basis-full">
         <a class="text-primary font-ZCOOLKuaiLe" href="/#team">team</a>
         <a class="text-primary font-ZCOOLKuaiLe" href="/#contact">contact</a>
     </div>
