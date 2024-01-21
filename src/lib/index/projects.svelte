@@ -16,13 +16,12 @@
 
     <Project
         name="monke activities"
-        description="monke mob so pro"
+        description="Play unique minigames, do quests in the lobby, unlock skins, hang out, and meet with friends in monke activities!"
         image="/images/fluidBanner.png"
         format="right"
         buttons={[
-            { text: "GitHub", link: "/", image: "", style: "button" },
-            { text: "Demo", link: "/", image: "", style: "button" },
-            { text: "Documentation", link: "/", image: "", style: "button" },
+            { text: "Play on Roblox", link: "https://www.roblox.com/home", image: "", style: "button" },
+            { text: "Join the Discord", link: "https://discord.com/invite/8CXNpsk3RP", image: "", style: "button" },
         ]}
     />
 </div>
