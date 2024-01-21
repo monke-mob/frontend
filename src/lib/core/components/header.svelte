@@ -31,13 +31,13 @@
 <header class="w-screen flex justify-center items-center absolute top-0 left-0 z-10 text-lg text-primary transition-all duration-300 {scrolling ? 'backdrop-blur-md backdrop-brightness-[0.15] py-4' : 'py-6'}">
     <div class="flex justify-end items-center gap-8 basis-full">
         <a class="text-primary font-ZCOOLKuaiLe" href="/">about us</a>
-        <a class="text-primary font-ZCOOLKuaiLe" href="/#projects">projects</a>
+        <a class="text-primary font-ZCOOLKuaiLe" href="/">projects</a>
     </div>
 
     <img class="h-12 mx-12" src="/images/logo.svg" alt="monke mob logo" />
 
     <div class="flex justify-start items-center gap-8 basis-full">
-        <a class="text-primary font-ZCOOLKuaiLe" href="/#team">team</a>
-        <a class="text-primary font-ZCOOLKuaiLe" href="/#contact">contact</a>
+        <a class="text-primary font-ZCOOLKuaiLe" href="/">team</a>
+        <a class="text-primary font-ZCOOLKuaiLe" href="/">contact</a>
     </div>
 </header>
