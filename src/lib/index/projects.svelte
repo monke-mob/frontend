@@ -2,7 +2,9 @@
     import Project from "./components/project.svelte";
 </script>
 
-<div id="#projects">
+<div class="w-screen h-fit" id="#projects">
+    <p class="text-5xl font-ZCOOLKuaiLe font-extrabold">our<br>projects</p>
+
     <Project
         name="Fluid: The new TweenService"
         description="Introducing Fluid – your exciting alternative to Roblox's TweenService! This dynamic service goes beyond the traditional, allowing you to effortlessly tween not only standard instances but also Models and Dictionaries. But that's not all! What sets Fluid apart is its incredible level of customizability. With Fluid, you have the freedom to fine-tune your tweens on various instances to your heart's content. Say goodbye to limitations and embrace the endless possibilities that Fluid brings to your tweening experience!"
