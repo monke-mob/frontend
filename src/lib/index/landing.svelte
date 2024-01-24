@@ -4,12 +4,12 @@
     let subText: HTMLParagraphElement;
 
     // This determines if the landing will display an announcement or branding and what to display if its an announcement.
-    const isAnnouncement: boolean = false;
+    const isAnnouncement: boolean = true;
     const announcementFor: string = "monke activities";
     const announcementLogo: string = "/images/monke-activities/logoText.svg";
-    const announcementText: string = `<p class="flex flex-col gap-2 brandGradient" style="-webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-        <span class="text-3xl font-ZCOOLKuaiLe font-extrabold">- Closed Alpha Release -</span>
-        <span class="text-3xl font-ZCOOLKuaiLe font-extrabold">- March 10th, 2024 -</span>
+    const announcementText: string = `<p class="flex flex-col gap-2 text-2xl sm:text-3xl font-extrabold brandGradient" style="-webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        <span class="font-ZCOOLKuaiLe">- Closed Alpha Release -</span>
+        <span class="font-ZCOOLKuaiLe">- March 10th, 2024 -</span>
     <p>`;
 
     onMount(() => {
@@ -22,9 +22,9 @@
 <div class="w-screen h-screen flex flex-col gap-4 justify-center items-center relative">
     <div class="z-[5] absolute left-1/2 -translate-x-1/2 md:translate-x-0 md:left-20 lg:left-40 w-screen flex flex-col justify-center items-center sm:block sm:w-fit">
         {#if isAnnouncement}
-            <img class="h-36" src={announcementLogo} alt={announcementFor} />
+            <img class="h-36 px-6 sm:px-0" src={announcementLogo} alt={announcementFor} />
         {:else}
-            <img class="h-36" src="/images/monke-mob/logoText.svg" alt="monke mob" />
+            <img class="h-36 px-6 sm:px-0" src="/images/monke-mob/logoText.svg" alt="monke mob" />
         {/if}
 
         <!--We set the announcement text via JS so that the HTML can be set to allow for tags.-->
