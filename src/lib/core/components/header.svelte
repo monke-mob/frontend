@@ -20,6 +20,7 @@
     }
 
     onMount(() => {
+        scroll();
         main = document.querySelector("main")! as HTMLDivElement;
         main.addEventListener("scroll", scroll);
 
