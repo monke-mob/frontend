@@ -68,7 +68,7 @@
     </div>
 
     {#if showMenu}
-        <div class="flex flex-col gap-3 justify-center items-start py-4 px-8">
+        <div class="flex flex-col gap-3 justify-center items-start py-4 px-8 md:hidden">
             <a class="text-primary font-ZCOOLKuaiLe" href="/">about us</a>
             <a class="text-primary font-ZCOOLKuaiLe" href="/">projects</a>
             <a class="text-primary font-ZCOOLKuaiLe" href="/">team</a>
