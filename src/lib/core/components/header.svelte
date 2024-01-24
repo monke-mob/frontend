@@ -62,7 +62,7 @@
         <img class="h-12 mx-12" src="/images/monke-mob/logo.svg" alt="monke mob logo" />
 
         <div class="justify-start items-center gap-8 basis-full hidden md:flex">
-            <a class="text-primary font-ZCOOLKuaiLe" href="/">team</a>
+            <a class="text-primary font-ZCOOLKuaiLe" href="/">news</a>
             <a class="text-primary font-ZCOOLKuaiLe" href="/">contact</a>
         </div>
     </div>
@@ -71,7 +71,7 @@
         <div class="flex flex-col gap-3 justify-center items-start py-4 px-8 md:hidden">
             <a class="text-primary font-ZCOOLKuaiLe" href="/">about us</a>
             <a class="text-primary font-ZCOOLKuaiLe" href="/">projects</a>
-            <a class="text-primary font-ZCOOLKuaiLe" href="/">team</a>
+            <a class="text-primary font-ZCOOLKuaiLe" href="/">news</a>
             <a class="text-primary font-ZCOOLKuaiLe" href="/">contact</a>
         </div>
     {/if}
