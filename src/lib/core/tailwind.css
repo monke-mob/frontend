@@ -233,13 +233,17 @@
     input {
         @apply outline-none;
     }
-
-    .font-ZCOOLKuaiLe {
-        @apply tracking-widest;
-    }
 }
 
 @layer components {
+    .font-ZCOOLKuaiLe {
+        @apply tracking-widest;
+    }
+    
+    .brandGradient {
+        @apply bg-gradient-to-b from-brandSecondary to-brand;
+    }
+
     .button {
         @apply rounded-normal bg-gradient-to-b bg-no-repeat to-brand from-brandSecondary text-black px-5 py-2 font-bold border-[2px] border-black;
     }
