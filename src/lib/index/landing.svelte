@@ -68,7 +68,7 @@
 
         <div class="w-[25vw] aspect-square absolute right-40 top-1/2 -translate-y-1/2 z-[2]">
             <img
-                class="banner w-full h-full"
+                class="w-full h-full"
                 alt="monke mob banner"
                 src="/images/monke-mob/banner/400x400.png"
                 srcset="/images/monke-mob/banner/400x400.png 320w, 
@@ -83,11 +83,6 @@
 </div>
 
 <style lang="postcss">
-    .banner {
-        --rotation: 0deg;
-    }
-
-    .banner,
     .banana {
         animation: hover infinite 6s ease-in-out var(--delay);
         transform: translateY(0px) rotate(var(--rotation));
