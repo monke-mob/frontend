@@ -2,8 +2,8 @@
     import Project from "./components/project.svelte";
 </script>
 
-<div class="w-screen h-fit" id="#projects">
-    <p class="text-5xl font-ZCOOLKuaiLe font-extrabold">our<br>projects</p>
+<div class="w-screen h-fit py-[15vh]" id="#projects">
+    <p class="brandTitle">our<br>projects</p>
 
     <Project
         name="Fluid: The new TweenService"
