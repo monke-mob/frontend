@@ -59,7 +59,7 @@
             <a class="text-primary font-ZCOOLKuaiLe" href="/">projects</a>
         </div>
 
-        <img class="h-12 mx-12" src="/images/logo.svg" alt="monke mob logo" />
+        <img class="h-12 mx-12" src="/images/monke-mob/logo.svg" alt="monke mob logo" />
 
         <div class="justify-start items-center gap-8 basis-full hidden md:flex">
             <a class="text-primary font-ZCOOLKuaiLe" href="/">team</a>
