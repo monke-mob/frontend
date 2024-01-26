@@ -69,7 +69,7 @@
 
     {#if showMenu}
         <div class="flex flex-col gap-3 justify-center items-start py-4 px-8 md:hidden">
-            <a class="text-primary font-ZCOOLKuaiLe" href="/#aboutUs">about us</a>
+            <a class="text-primary font-ZCOOLKuaiLe" href="/#aboutus">about us</a>
             <a class="text-primary font-ZCOOLKuaiLe" href="/#projects">projects</a>
             <a class="text-primary font-ZCOOLKuaiLe" href="/news">news</a>
             <a class="text-primary font-ZCOOLKuaiLe" href="/#contact">contact</a>
