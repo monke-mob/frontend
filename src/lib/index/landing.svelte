@@ -20,7 +20,7 @@
 </script>
 
 <div class="w-screen h-screen flex flex-col gap-4 justify-center items-center relative">
-    <div class="z-[5] absolute left-1/2 -translate-x-1/2 md:translate-x-0 md:left-20 lg:left-40 w-screen flex flex-col justify-center items-center sm:block sm:w-fit">
+    <div class="z-[5] absolute left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-40 w-screen flex flex-col justify-center items-center sm:block sm:w-fit">
         {#if isAnnouncement}
             <img class="h-36 px-6 sm:px-0" src={announcementLogo} alt={announcementFor} />
         {:else}
@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <div class="w-screen h-screen md:w-[45vw] md:h-[75vh] lg:h-[65vh] absolute right-0 top-1/2 -translate-y-1/2 blur-sm brightness-75 md:blur-none md:brightness-100">
+    <div class="w-screen h-screen lg:h-[65vh] absolute right-0 top-1/2 -translate-y-1/2 blur-sm brightness-75 lg:blur-none lg:brightness-100">
         {#each Array(4) as _value, quadrant}
             <div class="absolute w-[calc(50%-8%)] h-[calc(50%-8%)]" style="top: calc({25 * (quadrant == 0 || quadrant == 1 ? 0 : 2)}% + {8 * (quadrant == 0 || quadrant == 1 ? -1 : 1)}%); left: calc({25 * (quadrant == 0 || quadrant == 2 ? 0 : 2)}% + {8 * (quadrant == 0 || quadrant == 2 ? -1 : 1)}%);">
                 {#each Array(4) as _value, _index}
@@ -66,7 +66,7 @@
             </div>
         {/each}
 
-        <div class="w-[25vw] aspect-square absolute md:right-20 lg:right-40 top-1/2 -translate-y-1/2 z-[2] hidden md:block">
+        <div class="w-[25vw] aspect-square absolute lg:right-40 top-1/2 -translate-y-1/2 z-[2] hidden lg:block">
             <img
                 class="w-full h-full"
                 alt="monke mob banner"
