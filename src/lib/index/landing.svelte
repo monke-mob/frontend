@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <div class="w-screen h-screen lg:h-[65vh] absolute right-0 top-1/2 -translate-y-1/2 blur-sm brightness-75 lg:blur-none lg:brightness-100">
+    <div class="w-screen h-screen lg:w-[45vw] lg:h-[75vh] absolute right-0 top-1/2 -translate-y-1/2 blur-sm brightness-75 lg:blur-none lg:brightness-100">
         {#each Array(4) as _value, quadrant}
             <div class="absolute w-[calc(50%-8%)] h-[calc(50%-8%)]" style="top: calc({25 * (quadrant == 0 || quadrant == 1 ? 0 : 2)}% + {8 * (quadrant == 0 || quadrant == 1 ? -1 : 1)}%); left: calc({25 * (quadrant == 0 || quadrant == 2 ? 0 : 2)}% + {8 * (quadrant == 0 || quadrant == 2 ? -1 : 1)}%);">
                 {#each Array(4) as _value, _index}
