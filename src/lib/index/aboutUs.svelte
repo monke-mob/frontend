@@ -1,3 +1,5 @@
+<span id="aboutus" class="relative"></span>
+
 <div class="w-screen h-fit py-[15vh] px-6 sm:px-14 lg:px-32" id="#aboutUs">
     <p class="brandTitle">about<br>us</p>
 

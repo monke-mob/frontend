@@ -2,6 +2,8 @@
     import Project from "./components/project.svelte";
 </script>
 
+<span id="projects" class="relative"></span>
+
 <div class="w-screen h-fit py-[15vh]" id="#projects">
     <p class="brandTitle">our<br>projects</p>
 
