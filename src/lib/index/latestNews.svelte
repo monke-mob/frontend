@@ -1,15 +1,18 @@
-<div class="w-screen h-[70vh] py-[20vh] flex justify-center items-center gap-20">
-    <div class="w-1/2 h-full flex justify-end items-center">
-        <div class="h-full aspect-square bg-red-500 rounded-2xl"></div>
-    </div>
+<div class="w-screen h-screen lg:h-[70vh] py-[20vh] flex flex-col justify-center items-center gap-10">
+    <p class="font-ZCOOLKuaiLe font-extrabold brandGradient text-xl" style="-webkit-background-clip: text; -webkit-text-fill-color: transparent;">latest news</p>
 
-    <div class="w-1/2 h-full flex flex-col justify-center items-start gap-5 text-left">
-        <p class="font-ZCOOLKuaiLe font-extrabold brandGradient text-lg" style="-webkit-background-clip: text; -webkit-text-fill-color: transparent;">latest news</p>
-
-        <div>
-            <p class="text-3xl gap-2 brandTitle">Closed Alpha Release</p>
+    <div class="w-full flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-20">
+        <div class="w-full lg:w-1/2 h-fit lg:h-full flex justify-center lg:justify-end items-center">
+            <div class="w-10/12 sm:w-[40%] md:w-[35%] lg:w-[50%] aspect-[1.3/1] rounded-2xl border border-backgroundSecondary bg-background"></div>
         </div>
 
-        <a class="button">Read more</a>
+        <div class="w-full lg:w-1/2 h-fit lg:h-full flex flex-col justify-center items-center lg:items-start gap-6 text-center lg:text-left">
+            <div class="w-full">
+                <p class="text-4xl brandTitle w-full lg:max-w-[30%]">Closed Alpha Release</p>
+                <p class="text-xl text-light mt-2">March 10, 2024</p>
+            </div>
+
+            <a class="button" href="/news">Read more</a>
+        </div>
     </div>
 </div>
