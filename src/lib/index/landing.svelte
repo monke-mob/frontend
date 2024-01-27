@@ -20,7 +20,7 @@
 </script>
 
 <div class="w-screen h-screen flex flex-col gap-4 justify-center items-center relative">
-    <div class="z-[5] absolute left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-40 w-screen flex flex-col justify-center items-center sm:block sm:w-fit">
+    <div class="z-[5] absolute left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-20 xl:left-40 w-screen flex flex-col justify-center items-center sm:block sm:w-fit">
         {#if isAnnouncement}
             <img class="h-36 px-6 sm:px-0" src={announcementLogo} alt={announcementFor} />
         {:else}
@@ -66,7 +66,7 @@
             </div>
         {/each}
 
-        <div class="w-[25vw] aspect-square absolute lg:right-40 top-1/2 -translate-y-1/2 z-[2] hidden lg:block">
+        <div class="w-[25vw] aspect-square absolute lg:right-20 xl:right-40 top-1/2 -translate-y-1/2 z-[2] hidden lg:block">
             <img
                 class="w-full h-full"
                 alt="monke mob banner"
