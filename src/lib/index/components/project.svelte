@@ -20,7 +20,7 @@
     </div>
 
     <div class="h-fit lg:h-full flex justify-center items-center w-full lg:w-[50%] relative [&>*]:rounded-2xl [&>*]:border [&>*]:border-backgroundSecondary [&>*]:bg-background">
-        <img class="w-full object-cover md:object-none blur-md md:blur-none" src={image} alt={name} />
-        <img class="h-30 md:h-40 inline-block aspect-square left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  md:bottom-5 {format === "right" ? "md:left-5" : "md:right-5"} md:translate-x-0 md:translate-y-0 absolute shadow-2xl" src={icon} alt={`${name} icon`} />
+        <img class="w-full blur-md md:blur-none" src={image} alt={name} />
+        <img class="h-30 md:h-40 inline-block aspect-square left-1/2 top-1/2 md:top-auto -translate-x-1/2 -translate-y-1/2  md:bottom-5 {format === "right" ? "md:left-5" : "md:right-5 md:left-auto"} md:translate-x-0 md:translate-y-0 absolute shadow-2xl" src={icon} alt={`${name} icon`} />
     </div>
 </div>
