@@ -26,7 +26,7 @@
         image="https://tr.rbxcdn.com/77305cbdc984ad45f5a94632f1992d18/768/432/Image/Png"
         format="right"
         buttons={[
-            { text: "Play on Roblox", link: "https://www.roblox.com/home", image: "", style: "button" },
+            { text: "Play on Roblox", link: "https://www.roblox.com/games/13714167735/monke-activities", image: "", style: "button" },
             { text: "Join the Discord", link: "https://discord.com/invite/8CXNpsk3RP", image: "", style: "button" },
         ]}
     />
