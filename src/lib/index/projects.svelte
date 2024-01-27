@@ -10,7 +10,6 @@
     <Project
         name="Fluid: The new TweenService"
         description="Introducing Fluid – your exciting alternative to Roblox's TweenService! This dynamic service goes beyond the traditional, allowing you to effortlessly tween not only standard instances but also Models and Dictionaries. But that's not all! What sets Fluid apart is its incredible level of customizability. With Fluid, you have the freedom to fine-tune your tweens on various instances to your heart's content. Say goodbye to limitations and embrace the endless possibilities that Fluid brings to your tweening experience!"
-        icon = "https://tr.rbxcdn.com/c6bff967421f3e729d0e986a2b68df0d/150/150/Image/Png"
         image="/images/fluidBanner.png"
         buttons={[
             { text: "GitHub", link: "/", image: "", style: "button" },
