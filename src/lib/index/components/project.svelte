@@ -2,6 +2,7 @@
     export let format: "left" | "right" = "left";
     export let name: string;
     export let description: string;
+    export let icon: string;
     export let image: string;
     export let buttons: { text: string; link: string; image: string; style: string }[];
 </script>
@@ -18,7 +19,8 @@
         </div>
     </div>
 
-    <div class="h-fit lg:h-full flex justify-center items-center w-full lg:w-[50%]">
+    <div class="h-fit lg:h-full flex justify-center items-center w-full lg:w-[50%] relative [&>*]:rounded-2xl [&>*]:border [&>*]:border-backgroundSecondary [&>*]:bg-background">
         <img class="w-full" src={image} alt={name} />
+        <img class="h-40 inline-block aspect-square bottom-5 {format === "right" ? "left-5" : "right-5"} absolute shadow-2xl" src={icon} alt={`${name} icon`} />
     </div>
 </div>
