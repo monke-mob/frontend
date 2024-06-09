@@ -26,7 +26,7 @@
         format="right"
         buttons={[
             { text: "Play on Roblox", link: "https://www.roblox.com/games/13714167735/monke-activities", image: "", style: "button" },
-            { text: "Join the Discord", link: "https://discord.com/invite/8CXNpsk3RP", image: "", style: "button" },
+            { text: "Join the Discord", link: "https://discord.gg/rP9z8HRnSV", image: "", style: "button" },
         ]}
     />
 </div>
