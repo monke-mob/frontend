@@ -9,7 +9,7 @@
     const announcementLogo: string = "/images/monke-activities/logoText.svg";
     const announcementText: string = `<p class="flex flex-col gap-2 text-2xl sm:text-3xl font-extrabold brandGradient" style="-webkit-background-clip: text; -webkit-text-fill-color: transparent;">
         <span class="font-ZCOOLKuaiLe">Closed Alpha Release</span>
-        <span class="font-ZCOOLKuaiLe">March 10th, 2024</span>
+        <span class="font-ZCOOLKuaiLe">Coming Soon</span>
     <p>`;
 
     onMount(() => {
