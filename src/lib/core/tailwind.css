@@ -194,12 +194,13 @@
 
 @layer base {
     * {
-        scrollbar-width: auto;
+        scrollbar-width: thin;
         scrollbar-color: rgba(200, 200, 200, 0.5) rgba(0, 0, 0, 0.3);
     }
 
     *::-webkit-scrollbar {
-        @apply w-[5px] h-[5px];
+        width: 8px;
+        height: 8px;
     }
 
     *::-webkit-scrollbar-track {
