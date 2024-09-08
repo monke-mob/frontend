@@ -203,7 +203,8 @@
     }
 
     *::-webkit-scrollbar-track {
-        @apply hidden;
+        background: #222222;
+        border-radius: 10px;
     }
 
     *::-webkit-scrollbar-thumb {
