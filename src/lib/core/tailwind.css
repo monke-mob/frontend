@@ -195,7 +195,7 @@
 @layer base {
     * {
         scrollbar-width: auto;
-        scrollbar-color: transparent #ffffff;
+        scrollbar-color: #ffffff;
     }
 
     *::-webkit-scrollbar {
@@ -207,7 +207,7 @@
     }
 
     *::-webkit-scrollbar-thumb {
-        @apply bg-white bg-opacity-40 rounded-full;
+        @apply bg-transparent rounded-full;
     }
 
     * {
