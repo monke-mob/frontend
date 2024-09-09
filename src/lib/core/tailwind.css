@@ -194,31 +194,6 @@
 
 @layer base {
     * {
-        scrollbar-width: thin;
-        scrollbar-color: rgba(200, 200, 200, 0.5) rgba(0, 0, 0, 0);
-    }
-
-    *::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-    }
-
-    *::-webkit-scrollbar-track {
-        background: rgba(0, 0, 0, 0);
-        border-radius: 10px;
-    }
-
-    *::-webkit-scrollbar-thumb {
-        background: rgba(200, 200, 200, 0.5);
-        border-radius: 10px;
-        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-    }
-
-    *::-webkit-scrollbar-thumb:hover {
-        background: rgba(200, 200, 200, 0.7);
-    }
-
-    * {
         @apply font-Montserrat text-primary;
     }
 
