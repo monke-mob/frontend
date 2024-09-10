@@ -2,19 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    height: 100%;
-    margin: 0;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
-
-main {
-    width: 100vw;
-    height: 100vh;
-    overflow-y: auto;
-}
-
 @font-face {
     font-family: "Montserrat";
     src:
@@ -235,6 +222,7 @@ main {
         @apply font-Montserrat text-primary;
     }
 
+
     h1,
     h2,
     h3 {
@@ -322,6 +310,21 @@ main {
             rgb(0, 0, 0) 7.68136px -2.23532px 0px,
             rgb(0, 0, 0) 7.90012px -1.26021px 0px,
             rgb(0, 0, 0) 7.9956px -0.265434px 0px;
+
+        font-size: 3rem;
+        font-family: "ZCOOL KuaiLe", sans-serif;
+        font-weight: 800;
         @apply text-5xl font-ZCOOLKuaiLe font-extrabold;
+    }
+}
+
+@layer utilities {
+    main {
+        outline: none;
+    }
+
+    html,
+    body {
+        -webkit-overflow-scrolling: touch;
     }
 }

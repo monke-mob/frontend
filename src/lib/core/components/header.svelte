@@ -1,10 +1,28 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import { goto } from '$app/navigation';
 
     let main: HTMLDivElement;
     let ticking: boolean = false;
     let showMenu: boolean = false;
     $: scrolling = false;
+
+    async function scrollToElement(event: Event) {
+        const target = event.target as HTMLAnchorElement;
+        const hash = target.getAttribute('href');
+        if (hash) {
+            await goto(hash);
+            const element = document.querySelector(hash);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                // Adjust the scroll position after smooth scrolling is complete
+                setTimeout(() => {
+                    const headerHeight = document.querySelector('header').clientHeight;
+                    window.scrollBy(0, -headerHeight);
+                }, 500);
+            }
+        }
+    }
 
     function scroll() {
         const scrollPosition: number = main.scrollTop;
@@ -19,10 +37,15 @@
         }
     }
 
+    function removeHash() {
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
+
     onMount(() => {
         main = document.querySelector("main")! as HTMLDivElement;
         scroll();
         main.addEventListener("scroll", scroll);
+        removeHash();
 
         return () => {
             main.removeEventListener("scroll", scroll);
@@ -41,38 +64,38 @@
             <svg class="w-full h-full fill-white" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 128 128" xml:space="preserve">
                 <path
                     d="M119.1,72.8H8.9c-4.9,0-8.9-4-8.9-8.9v0c0-4.9,4-8.9,8.9-8.9h110.3c4.9,0,8.9,4,8.9,8.9v0
-		C128,68.8,124,72.8,119.1,72.8z"
+        C128,68.8,124,72.8,119.1,72.8z"
                 />
                 <path
                     d="M119.1,17.7H8.9C4,17.7,0,13.8,0,8.9v0C0,4,4,0,8.9,0l110.3,0c4.9,0,8.9,4,8.9,8.9v0
-		C128,13.8,124,17.7,119.1,17.7z"
+        C128,13.8,124,17.7,119.1,17.7z"
                 />
                 <path
                     d="M119.1,128H8.9C4,128,0,124,0,119.1v0c0-4.9,4-8.9,8.9-8.9h110.3c4.9,0,8.9,4,8.9,8.9v0
-		C128,124,124,128,119.1,128z"
+        C128,124,124,128,119.1,128z"
                 />
             </svg>
         </button>
 
         <div class="justify-end items-center gap-8 basis-full hidden md:flex">
-            <a class="text-primary font-ZCOOLKuaiLe" href="/#aboutus">about us</a>
-            <a class="text-primary font-ZCOOLKuaiLe" href="/#projects">projects</a>
+            <a class="text-primary font-ZCOOLKuaiLe" href="/#aboutus" on:click={scrollToElement}>about us</a>
+            <a class="text-primary font-ZCOOLKuaiLe" href="/#projects" on:click={scrollToElement}>projects</a>
         </div>
 
         <img class="h-12 mx-12" src="/images/monke-mob/logo.svg" alt="monke mob logo" />
 
         <div class="justify-start items-center gap-8 basis-full hidden md:flex">
-            <a class="text-primary font-ZCOOLKuaiLe" href="/news">news</a>
-            <a class="text-primary font-ZCOOLKuaiLe" href="/#contact">contact</a>
+            <a class="text-primary font-ZCOOLKuaiLe" href="/news" on:click={scrollToElement}>news</a>
+            <a class="text-primary font-ZCOOLKuaiLe" href="/#contact" on:click={scrollToElement}>contact</a>
         </div>
     </div>
 
     {#if showMenu}
         <div class="flex flex-col gap-3 justify-center items-start py-4 px-8 md:hidden">
-            <a class="text-primary font-ZCOOLKuaiLe" href="/#aboutus">about us</a>
-            <a class="text-primary font-ZCOOLKuaiLe" href="/#projects">projects</a>
-            <a class="text-primary font-ZCOOLKuaiLe" href="/news">news</a>
-            <a class="text-primary font-ZCOOLKuaiLe" href="/#contact">contact</a>
+            <a class="text-primary font-ZCOOLKuaiLe" href="/#aboutus" on:click={scrollToElement}>about us</a>
+            <a class="text-primary font-ZCOOLKuaiLe" href="/#projects" on:click={scrollToElement}>projects</a>
+            <a class="text-primary font-ZCOOLKuaiLe" href="/news" on:click={scrollToElement}>news</a>
+            <a class="text-primary font-ZCOOLKuaiLe" href="/#contact" on:click={scrollToElement}>contact</a>
         </div>
     {/if}
 </header>
