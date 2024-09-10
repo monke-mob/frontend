@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import applySafeAreaInsets from "$src/safe-area.js";
 
     let main: HTMLDivElement;
     let ticking: boolean = false;
@@ -52,6 +53,7 @@
         main.addEventListener("scroll", scroll);
         smoothScroll();
         removeHash();
+        applySafeAreaInsets();
 
         return () => {
             main.removeEventListener("scroll", scroll);
