@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import applySafeAreaInsets from "$src/safe-area.js";
+    import applySafeAreaInsets from "/src/lib/core/components/safe-area.js";
 
     let main: HTMLDivElement;
     let ticking: boolean = false;
