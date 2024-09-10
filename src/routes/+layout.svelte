@@ -11,7 +11,7 @@
 
 <CorrectHeight></CorrectHeight>
 
-<main class="w-screen h-screen overflow-y-auto overflow-x-hidden">
+<main class="safe-area w-screen h-screen overflow-y-auto overflow-x-hidden" style="height: calc(100vh - var(--safe-area-inset-top) - var(--safe-area-inset-bottom));">
     <Header />
     <slot />
 </main>

@@ -319,11 +319,14 @@
 }
 
 @layer utilities {
-    html,
-    body {
-        padding-top: env(safe-area-inset-top);
-        padding-bottom: env(safe-area-inset-bottom);
-        -webkit-overflow-scrolling: touch;
+    :root {
+        --safe-area-inset-top: env(safe-area-inset-top);
+        --safe-area-inset-bottom: env(safe-area-inset-bottom);
+    }
+
+    .safe-area {
+        padding-top: var(--safe-area-inset-top);
+        padding-bottom: var(--safe-area-inset-bottom);
     }
     
     main {
