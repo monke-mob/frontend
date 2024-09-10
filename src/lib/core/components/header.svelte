@@ -1,26 +1,16 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { goto } from '$app/navigation';
 
     let main: HTMLDivElement;
     let ticking: boolean = false;
     let showMenu: boolean = false;
     $: scrolling = false;
 
-    async function scrollToElement(event: Event) {
+    function scrollToElement(event: Event) {
         const target = event.target as HTMLAnchorElement;
         const hash = target.getAttribute('href');
         if (hash) {
-            await goto(hash);
-            const element = document.querySelector(hash);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-                // Adjust the scroll position after smooth scrolling is complete
-                setTimeout(() => {
-                    const headerHeight = document.querySelector('header').clientHeight;
-                    window.scrollBy(0, -headerHeight);
-                }, 500);
-            }
+            window.location.hash = hash;
         }
     }
 
@@ -37,7 +27,22 @@
         }
     }
 
+    function smoothScroll() {
+        const hash = window.location.hash;
+        if (hash) {
+            const element = document.querySelector(hash);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(() => {
+                    const headerHeight = document.querySelector('header').clientHeight;
+                    window.scrollBy(0, -headerHeight);
+                }, 500);
+            }
+        }
+    }
+
     function removeHash() {
+        window.scrollTo(0, 0);
         history.pushState("", document.title, window.location.pathname + window.location.search);
     }
 
@@ -45,6 +50,7 @@
         main = document.querySelector("main")! as HTMLDivElement;
         scroll();
         main.addEventListener("scroll", scroll);
+        smoothScroll();
         removeHash();
 
         return () => {
@@ -54,6 +60,7 @@
 </script>
 
 <header class="w-screen absolute top-0 left-0 z-10 text-lg text-primary transition-all duration-300 {scrolling || showMenu ? 'backdrop-blur-md backdrop-brightness-[0.15] py-4' : 'py-6'}">
+
     <div class="flex justify-center items-center relative">
         <button
             class="absolute top-1/2 -translate-y-1/2 left-8 h-6 aspect-square md:hidden z-20"
@@ -99,3 +106,10 @@
         </div>
     {/if}
 </header>
+
+<style>
+    .safe-area {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+</style>

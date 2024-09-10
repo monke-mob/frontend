@@ -319,6 +319,13 @@
 }
 
 @layer utilities {
+    html,
+    body {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        -webkit-overflow-scrolling: touch;
+    }
+    
     main {
         outline: none;
     }
