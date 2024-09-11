@@ -9,10 +9,24 @@
 
     function scrollToElement(event: Event) {
         const target = event.target as HTMLAnchorElement;
-        const hash = target.getAttribute('href');
+        const hash = target.getAttribute("href");
         if (hash) {
-            window.location.hash = hash;
+            const headerHeight = document.querySelector("header").clientHeight;
+            const safeAreaTop = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--safe-area-inset-top')) || 0;
+            const element = document.querySelector(hash);
+            if (element) {
+                event.preventDefault();
+                window.location.hash = hash;
+                window.scrollTo({
+                    top: element.offsetTop - headerHeight - safeAreaTop,
+                    behavior: "smooth"
+                });
+            }
         }
+    }
+
+    function scrollToTop() {
+        window.scrollTo(0, 0);
     }
 
     function scroll() {
@@ -33,9 +47,9 @@
         if (hash) {
             const element = document.querySelector(hash);
             if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
+                element.scrollIntoView({ behavior: "smooth" });
                 setTimeout(() => {
-                    const headerHeight = document.querySelector('header').clientHeight;
+                    const headerHeight = document.querySelector("header").clientHeight;
                     window.scrollBy(0, -headerHeight);
                 }, 500);
             }
@@ -43,7 +57,6 @@
     }
 
     function removeHash() {
-        window.scrollTo(0, 0);
         history.pushState("", document.title, window.location.pathname + window.location.search);
     }
 
@@ -54,6 +67,7 @@
         smoothScroll();
         removeHash();
         applySafeAreaInsets();
+        scrollToTop();
 
         return () => {
             main.removeEventListener("scroll", scroll);
@@ -61,8 +75,7 @@
     });
 </script>
 
-<header class="w-screen absolute top-0 left-0 z-10 text-lg text-primary transition-all duration-300 {scrolling || showMenu ? 'backdrop-blur-md backdrop-brightness-[0.15] py-4' : 'py-6'}">
-
+<header class="w-screen absolute top-0 left-0 z-10 text-lg text-primary transition-all duration-300 {scrolling || showMenu ? 'backdrop-blur-md backdrop-brightness-[0.15] py-4' : 'py-6'}" style="top: env(safe-area-inset-top);">
     <div class="flex justify-center items-center relative">
         <button
             class="absolute top-1/2 -translate-y-1/2 left-8 h-6 aspect-square md:hidden z-20"

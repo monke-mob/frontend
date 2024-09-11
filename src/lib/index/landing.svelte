@@ -8,8 +8,8 @@
     const announcementFor: string = "monke activities";
     const announcementLogo: string = "/images/monke-activities/logoText.svg";
     const announcementText: string = `<p class="flex flex-col gap-2 text-2xl sm:text-3xl font-extrabold brandGradient" style="-webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-        <span class="font-ZCOOLKuaiLe">Closed Alpha Release</span>
-        <span class="font-ZCOOLKuaiLe">Coming Soon</span>
+        <span class="font-ZCOOLKuaiLe">closed alpha release</span>
+        <span class="font-ZCOOLKuaiLe">coming soon</span>
     <p>`;
 
     onMount(() => {
@@ -17,6 +17,26 @@
             subText.innerHTML = announcementText;
         }
     });
+
+    function getRandomRotation() {
+        return Math.random() * (Math.random() < 0.5 ? -50 : 50);
+    }
+
+    function getRandomDelay() {
+        return Math.random() * 3;
+    }
+
+    function getRandomSize() {
+        return Math.random() * 20 + 30;
+    }
+
+    function getRandomTop() {
+        return Math.random() * 100;
+    }
+
+    function getRandomLeft() {
+        return Math.random() * 100;
+    }
 </script>
 
 <div class="w-screen h-screen flex flex-col gap-4 justify-center items-center relative">
@@ -43,7 +63,15 @@
         {#each Array(4) as _value, quadrant}
             <div class="absolute w-[calc(50%-8%)] h-[calc(50%-8%)]" style="top: calc({25 * (quadrant == 0 || quadrant == 1 ? 0 : 2)}% + {8 * (quadrant == 0 || quadrant == 1 ? -1 : 1)}%); left: calc({25 * (quadrant == 0 || quadrant == 2 ? 0 : 2)}% + {8 * (quadrant == 0 || quadrant == 2 ? -1 : 1)}%);">
                 {#each Array(4) as _value, _index}
-                    <svg class="banana aspect-square absolute fill" style="--rotation: {Math.random() * (Math.random() < 0.5 ? -50 : 50)}deg; --delay: {Math.random() * 3}s; width: {Math.random() * 20 + 30}px; top: {Math.random() * 100}%; left: {Math.random() * 100}%;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128 128" xml:space="preserve">
+                    <svg
+                        class="banana aspect-square absolute fill"
+                        style="transform: rotate({getRandomRotation()}deg); animation-delay: {getRandomDelay()}s; width: {getRandomSize()}px; top: {getRandomTop()}%; left: {getRandomLeft()}%;"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 128 128"
+                        xml:space="preserve"
+                    >
                         <defs>
                             <linearGradient id="0" x1="0.5" y1="0" x2="0.5" y2="1">
                                 <stop offset="0%" stop-color="#ffd160" />
@@ -55,11 +83,11 @@
                         <path
                             fill="url(#0)"
                             d="M115.7,103.1c3.9,4.6,2,10.6,0.3,13.4c-0.1,0.2-0.3,0.4-0.5,0.6c-7.4,7.1-18.9,10.9-32.2,10.9
-	c-1.8,0-3.6-0.1-5.4-0.2c-20.9-1.6-40.3-12-53.2-28.5c-1.4-1.8-5.7-7.2-9.2-14.9c-4.5-9.7-6.2-19.4-5.2-29
-	c0.5-5.2,2.6-18.6,11.6-29.2c2.4-2.8,4.5-4.6,6.6-6.4c2.6-2.2,5.3-4.5,8.8-9c2-2.5,3.7-5.2,5.5-8.3c0.9-1.6,2.6-2.6,4.4-2.6
-	s3.5,1.1,4.3,2.8c1.2,2.5,2.5,4.9,3.8,7.4c0,0,0,0,0,0.1c0.7,1.3,0.8,2.8,0.3,4.2c-0.5,1.4-1.5,2.5-2.7,3.1
-	c-1.5,0.7-3.7,1.9-5.6,4.1c0,0-2.6,3-3.8,7.7c-2,7.8-2.7,25.1,7.9,39.9c7.7,10.8,18,15.1,23.4,16.7c3.9,1.1,7.3,2.1,10.4,3
-	C104.4,94.4,109.6,95.8,115.7,103.1L115.7,103.1z"
+    c-1.8,0-3.6-0.1-5.4-0.2c-20.9-1.6-40.3-12-53.2-28.5c-1.4-1.8-5.7-7.2-9.2-14.9c-4.5-9.7-6.2-19.4-5.2-29
+    c0.5-5.2,2.6-18.6,11.6-29.2c2.4-2.8,4.5-4.6,6.6-6.4c2.6-2.2,5.3-4.5,8.8-9c2-2.5,3.7-5.2,5.5-8.3c0.9-1.6,2.6-2.6,4.4-2.6
+    s3.5,1.1,4.3,2.8c1.2,2.5,2.5,4.9,3.8,7.4c0,0,0,0,0,0.1c0.7,1.3,0.8,2.8,0.3,4.2c-0.5,1.4-1.5,2.5-2.7,3.1
+    c-1.5,0.7-3.7,1.9-5.6,4.1c0,0-2.6,3-3.8,7.7c-2,7.8-2.7,25.1,7.9,39.9c7.7,10.8,18,15.1,23.4,16.7c3.9,1.1,7.3,2.1,10.4,3
+    C104.4,94.4,109.6,95.8,115.7,103.1L115.7,103.1z"
                         />
                     </svg>
                 {/each}

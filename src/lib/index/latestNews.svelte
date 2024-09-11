@@ -8,7 +8,7 @@
 
         <div class="w-full lg:w-1/2 h-fit lg:h-full flex flex-col justify-center items-center lg:items-start gap-6 text-center lg:text-left">
             <div class="w-full">
-                <p class="text-4xl brandTitle w-full lg:max-w-[30%]">Closed Alpha Release</p>
+                <p class="text-4xl brandTitle w-full lg:max-w-[30%]">closed alpha release</p>
                 <p class="text-xl text-light mt-2">Coming Soon</p>
             </div>
 
