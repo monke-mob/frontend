@@ -2,6 +2,12 @@
     import Header from "$lib/core/components/header.svelte";
     import CorrectHeight from "$lib/core/correctHeight.svelte";
     import "$lib/core/tailwind.css";
+    import { onMount } from "svelte";
+    import applySafeAreaInsets from "$lib/core/components/safe-area.js";
+    
+    onMount(() => {
+        applySafeAreaInsets();
+    });
 </script>
 
 <svelte:head>
@@ -19,8 +25,8 @@
 <style lang="postcss">
     :global(body) {
         @apply w-screen h-screen overflow-hidden text-center bg-no-repeat bg-gradient-to-b from-backgroundSecondary to-background;
-        padding-top: constant(safe-area-inset-top);
-        padding-bottom: constant(safe-area-inset-bottom);
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
     }
 
     main {

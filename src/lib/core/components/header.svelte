@@ -11,15 +11,13 @@
         const target = event.target as HTMLAnchorElement;
         const hash = target.getAttribute("href");
         if (hash) {
-            const headerHeight = document.querySelector("header").clientHeight;
-            const safeAreaTop = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--safe-area-inset-top")) || 0;
             const element = document.querySelector(hash);
             if (element) {
                 event.preventDefault();
-                window.location.hash = hash;
-                window.scrollTo({
-                    top: element.offsetTop - headerHeight - safeAreaTop,
-                    behavior: "smooth",
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                    inline: 'nearest'
                 });
             }
         }
@@ -47,11 +45,7 @@
         if (hash) {
             const element = document.querySelector(hash);
             if (element) {
-                element.scrollIntoView({ behavior: "smooth" });
-                setTimeout(() => {
-                    const headerHeight = document.querySelector("header").clientHeight;
-                    window.scrollBy(0, -headerHeight);
-                }, 500);
+                element.scrollIntoView({ behavior: "smooth", block: "start" });
             }
         }
     }
