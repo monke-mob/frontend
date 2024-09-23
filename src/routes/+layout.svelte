@@ -4,7 +4,7 @@
     import "$lib/core/tailwind.css";
     import { onMount } from "svelte";
     import applySafeAreaInsets from "$lib/core/components/safe-area.js";
-    
+
     onMount(() => {
         applySafeAreaInsets();
     });

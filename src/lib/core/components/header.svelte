@@ -14,11 +14,19 @@
             const element = document.querySelector(hash);
             if (element) {
                 event.preventDefault();
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start',
-                    inline: 'nearest'
-                });
+
+                // Custom scroll offset logic for "contact" section
+                if (hash === "#contact") {
+                    const yOffset = -80; // Adjust this based on your header height
+                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                } else {
+                    element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                        inline: "nearest",
+                    });
+                }
             }
         }
     }

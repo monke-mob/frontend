@@ -5,12 +5,12 @@
 </div>
 
 <style>
-  .safe-area-padding {
-    padding-bottom: env(safe-area-inset-bottom);
-    padding-top: env(safe-area-inset-top);
-  }
+    .safe-area-padding {
+        padding-top: env(safe-area-inset-top, 20px); /* fallback in case the env var is not supported */
+        padding-bottom: env(safe-area-inset-bottom, 20px); /* fallback for bottom */
+    }
 
-  .brandGradient {
-    min-height: calc(10vh + env(safe-area-inset-bottom));
-  }
+    .brandGradient {
+        min-height: calc(10vh + env(safe-area-inset-bottom, 0px)); /* safe fallback */
+    }
 </style>

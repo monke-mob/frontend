@@ -2,28 +2,20 @@
     import { onMount } from "svelte";
 
     let heightScreenElements: HTMLElement[];
-    let classRegex: RegExp = /(lg|sm|md)\:h\-/gm;
-    let selectorRegex: RegExp = /(lg|sm|md)/gm;
+    const classRegex: RegExp = /(lg|sm|md)\:h\-/gm;
+    const selectorRegex: RegExp = /(lg|sm|md)/gm;
+    let resizeTimeout: ReturnType<typeof setTimeout>;
 
-    //prevent elements with sm, md, or lg selectors from being overwritten depending on screen size
     function checkIfSelectorMatch(element: HTMLElement): boolean {
-        const classMatches: any = classRegex.exec(element.classList.toString());
-
+        const classMatches = element.classList.toString().match(classRegex);
         if (classMatches === null) return false;
 
-        let result: boolean = false;
+        let result = false;
 
-        //we found matches now check if they are being used
         classMatches.forEach((string: string) => {
-            const selectorMatches: any = selectorRegex.exec(string);
+            const selectorMatches = string.match(selectorRegex);
+            if (!selectorMatches) return;
 
-            //if no matches from the selector regex are found then return
-            if (selectorMatches === null) {
-                result = result === true ? true : false;
-                return;
-            }
-
-            //check with based on selector
             switch (selectorMatches[0]) {
                 case "lg":
                     result = window.innerWidth > 1024;
@@ -40,36 +32,34 @@
         return result;
     }
 
-    //fixes bug on IOS where the viewport space is bigger than the innerHeight
     function updateHeightElements() {
-        heightScreenElements = Array.from(document.querySelectorAll(".h-screen") as unknown as HTMLCollectionOf<HTMLElement>);
+        heightScreenElements = Array.from(document.querySelectorAll(".h-screen") as NodeListOf<HTMLElement>);
 
         heightScreenElements.forEach((element: HTMLElement) => {
-            //check to make sure that size should be set
-            if (checkIfSelectorMatch(element) === true) {
-                element.style.height = null as any;
-                return;
+            if (checkIfSelectorMatch(element)) {
+                element.style.height = "";
+            } else {
+                element.style.height = `${window.innerHeight}px`;
             }
-
-            element.style.height = `${window.innerHeight}px`;
         });
+    }
+
+    // Debounce window resize events to improve performance
+    function handleResize() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            updateHeightElements();
+        }, 100);
     }
 
     onMount(() => {
         updateHeightElements();
 
-        let lastScreenSize: number = 0;
-
-        // Replaces document resize because for some reason the body tag is never set to the right size.
-        const heightElementsUpdateInterval = setInterval(() => {
-            if (lastScreenSize === window.innerHeight) return;
-
-            lastScreenSize = window.innerHeight;
-            updateHeightElements();
-        }, 500);
+        // Throttle the resize event listener
+        window.addEventListener("resize", handleResize);
 
         return () => {
-            clearInterval(heightElementsUpdateInterval);
-        }
+            window.removeEventListener("resize", handleResize);
+        };
     });
 </script>
