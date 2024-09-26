@@ -2,8 +2,9 @@
     import { onMount } from "svelte";
 
     let subText: HTMLParagraphElement;
+    let showLogo = false; // Flag to control logo display
 
-    // This determines if the landing will display an announcement or branding and what to display if its an announcement.
+    // Determines if the landing will display an announcement or branding
     const isAnnouncement: boolean = true;
     const announcementFor: string = "monke activities";
     const announcementLogo: string = "/images/monke-activities/logoText.svg";
@@ -13,6 +14,7 @@
     <p>`;
 
     onMount(() => {
+        showLogo = true; // Force display when the component mounts
         if (isAnnouncement) {
             subText.innerHTML = announcementText;
         }
@@ -27,7 +29,7 @@
     }
 
     function getRandomSize() {
-        return Math.random() * 20 + 30;
+        return Math.random() * 20 + 30; // Random size between 30px and 50px
     }
 
     function getRandomTop() {
@@ -39,15 +41,23 @@
     }
 </script>
 
+<svelte:head>
+    <!-- Preload critical images for faster LCP -->
+    <link rel="preload" href="/images/monke-activities/logoText.svg" as="image">
+    <link rel="lazy" href="/images/monke-mob/logoText.svg" as="image">
+    <link rel="preload" href="/images/monke-mob/banner/400x400.webp" as="image">
+</svelte:head>
+
 <div class="w-screen h-screen flex flex-col gap-4 justify-center items-center relative">
     <div class="z-[5] absolute left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-20 xl:left-40 w-screen flex flex-col justify-center items-center sm:block sm:w-fit">
-        {#if isAnnouncement}
-            <img class="h-36 px-6 sm:px-0" src={announcementLogo} alt={announcementFor} />
-        {:else}
-            <img class="h-36 px-6 sm:px-0" src="/images/monke-mob/logoText.svg" alt="monke mob" />
+        {#if showLogo}
+            {#if isAnnouncement}
+                <img class="h-36 px-6 sm:px-0" src={announcementLogo} alt={announcementFor} loading="eager" />
+            {:else}
+                <img class="h-36 px-6 sm:px-0" src="/images/monke-mob/logoText.svg" alt="monke mob" loading="eager" />
+            {/if}
         {/if}
 
-        <!--We set the announcement text via JS so that the HTML can be set to allow for tags.-->
         <p class="text-2xl text-light mt-2" bind:this={subText}>going bananas 🍌</p>
 
         <div class="flex mt-12 justify-center items-center text-xl">
@@ -98,13 +108,14 @@
             <img
                 class="w-full h-full"
                 alt="monke mob banner"
-                src="/images/monke-mob/banner/400x400.png"
-                srcset="/images/monke-mob/banner/400x400.png 320w, 
-            /images/monke-mob/banner/600x600.png 640w, 
-            /images/monke-mob/banner/900x900.png 960w"
+                src="/images/monke-mob/banner/400x400.webp"
+                srcset="/images/monke-mob/banner/400x400.webp 320w, 
+            /images/monke-mob/banner/600x600.webp 640w, 
+            /images/monke-mob/banner/900x900.webp 960w"
                 sizes="(max-width: 320px) 280px, 
                    (max-width: 640px) 640px, 
                    960px"
+                loading="lazy"
             />
         </div>
     </div>
@@ -122,7 +133,7 @@
         }
 
         50% {
-            transform: translateY(-15px) rotate(var(--rotation));
+            transform: translateY(-5px) rotate(var(--rotation));
         }
 
         100% {
