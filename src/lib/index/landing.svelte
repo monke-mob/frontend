@@ -44,7 +44,7 @@
 <svelte:head>
     <!-- Preload critical images for faster LCP -->
     <link rel="preload" href="/images/monke-activities/logoText.svg" as="image">
-    <link rel="lazy" href="/images/monke-mob/logoText.svg" as="image">
+    <link rel="preload" href="/images/monke-mob/logoText.svg" as="image">
     <link rel="preload" href="/images/monke-mob/banner/400x400.webp" as="image">
 </svelte:head>
 
@@ -115,7 +115,7 @@
                 sizes="(max-width: 320px) 280px, 
                    (max-width: 640px) 640px, 
                    960px"
-                loading="lazy"
+                loading="preload"
             />
         </div>
     </div>
