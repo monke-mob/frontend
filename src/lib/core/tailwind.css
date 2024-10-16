@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font-Face Declarations */
 @font-face {
     font-family: "Montserrat";
     src:
@@ -192,6 +193,7 @@
     font-display: swap;
 }
 
+/* Base Layer */
 @layer base {
     * {
         scrollbar-width: thin;
@@ -222,7 +224,6 @@
         @apply font-Montserrat text-primary;
     }
 
-
     h1,
     h2,
     h3 {
@@ -244,6 +245,7 @@
     }
 }
 
+/* Components Layer */
 @layer components {
     .font-ZCOOLKuaiLe {
         @apply tracking-widest;
@@ -255,6 +257,13 @@
 
     .button {
         @apply rounded-normal bg-gradient-to-b bg-no-repeat to-brand from-brandSecondary text-black px-5 py-2 font-bold border-[2px] border-black;
+    }
+
+    .trademark {
+        font-size: 4rem;
+        font-family: "ZCOOL KuaiLe", sans-serif;
+        font-weight: 800;
+        @apply text-lg font-Montserrat font-bold;
     }
 
     .brandTitle {
@@ -315,26 +324,5 @@
         font-family: "ZCOOL KuaiLe", sans-serif;
         font-weight: 800;
         @apply text-5xl font-ZCOOLKuaiLe font-extrabold;
-    }
-}
-
-@layer utilities {
-    :root {
-        --safe-area-inset-top: env(safe-area-inset-top);
-        --safe-area-inset-bottom: env(safe-area-inset-bottom);
-    }
-
-    .safe-area {
-        padding-top: var(--safe-area-inset-top);
-        padding-bottom: var(--safe-area-inset-bottom);
-    }
-    
-    main {
-        outline: none;
-    }
-
-    html,
-    body {
-        -webkit-overflow-scrolling: touch;
     }
 }
