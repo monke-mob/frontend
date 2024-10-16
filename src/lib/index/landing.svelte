@@ -1,8 +1,8 @@
 <script lang="ts">
     import { onMount } from "svelte";
     let subText: HTMLParagraphElement;
-    let showLogo = false; // Flag to control logo display
-    const isAnnouncement: boolean = true;
+    let showLogo = true;
+    const isAnnouncement: boolean = false;
     const announcementFor: string = "monke activities";
     const announcementLogo: string = "/images/monke-activities/logoText.svg";
     const announcementText: string = `
@@ -13,7 +13,7 @@
     `;
   
     onMount(() => {
-      showLogo = true; // Force display when the component mounts
+      showLogo = true;
       if (isAnnouncement) {
         subText.innerHTML = announcementText;
       }
@@ -28,7 +28,7 @@
     }
   
     function getRandomSize() {
-      return Math.random() * 20 + 30; // Random size between 30px and 50px
+      return Math.random() * 20 + 30;
     }
   
     function getRandomTop() {
@@ -51,9 +51,9 @@
     <div class="z-[5] absolute left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-20 xl:left-40 w-screen flex flex-col justify-center items-center sm:block sm:w-fit">
       {#if showLogo}
         {#if isAnnouncement}
-          <img class="h-36 px-6 sm:px-0" src={announcementLogo} alt={announcementFor} loading="eager" />
+          <img class="h-36 px-6 sm:px-0" src={announcementLogo} alt={announcementFor} loading="lazy" />
         {:else}
-          <img class="h-36 px-6 sm:px-0" src="/images/monke-mob/logoText.svg" alt="monke mob" loading="eager" />
+          <img class="h-36 px-6 sm:px-0" src="/images/monke-mob/logoText.svg" alt="monke mob" loading="lazy" />
         {/if}
       {/if}
       <p class="text-2xl text-light mt-2" bind:this={subText}>going bananas 🍌</p>
